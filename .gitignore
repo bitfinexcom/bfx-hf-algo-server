@@ -6,3 +6,6 @@ npm-debug.log
 *.swo
 *.swp
 .DS_Store
+coverage
+.env
+db/*.sql
