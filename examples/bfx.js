@@ -23,3 +23,10 @@ const bfx = new BFX({
 })
 
 module.exports = bfx
+module.exports.args = {
+  apiKey: API_KEY,
+  apiSecret: API_SECRET,
+  wsURL: WS_URL,
+  restURL: REST_URL,
+  agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
+}

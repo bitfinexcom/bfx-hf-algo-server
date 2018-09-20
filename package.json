@@ -36,7 +36,7 @@
     "bfx-hf-algo": "bitfinexcom/bfx-hf-algo#master",
     "bfx-hf-util": "bitfinexcom/bfx-hf-util#master",
     "bfx-hf-db": "bitfinexcom/bfx-hf-db#master",
-    "bitfinex-api-node": "^2.0.0-beta.1",
+    "bitfinex-api-node": "^2.0.0",
     "bluebird": "^3.5.1",
     "knex": "^0.15.2",
     "lodash": "^4.17.10",
