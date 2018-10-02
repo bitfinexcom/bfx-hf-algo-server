@@ -15,7 +15,7 @@ const { API_KEY, API_SECRET, WS_URL, REST_URL, SOCKS_PROXY_URL } = process.env
 
 const run = async () => {
   await startDB(`${__dirname}/../db`)
-  await connectDB('hf-ds')
+  await connectDB('hf-as')
 
   const server = new AOServer({
     apiKey: API_KEY,
