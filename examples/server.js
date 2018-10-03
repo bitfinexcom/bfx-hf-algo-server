@@ -23,7 +23,7 @@ const run = async () => {
     wsURL: WS_URL,
     restURL: REST_URL,
     agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
-  
+
     aos: [IcebergOrder, TWAPOrder, AccumulateDistribute],
     port: 8877,
   })
