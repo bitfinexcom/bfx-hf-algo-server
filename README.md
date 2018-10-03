@@ -4,13 +4,8 @@
 
 ```
 // .env
-DB_ENV=development
-DEV_DB_FN=db/dev.sql
-PROD_DB_FN=db/dev.sql
-
 API_KEY=...
 API_SECRET=...
 ```
 
-`knex migrate:latest`
-`yarn start`
+`npm start`
