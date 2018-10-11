@@ -20,7 +20,7 @@ To start an algo order click the 'Submit' button in the Bitfinex UI to generate 
 
 The server can be stopped/started at will, with running algo orders automatically resuming if the contents of `db/*` have not been cleared.<br />
 
-<br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br />
 ---
 
 ### Example Invocation
