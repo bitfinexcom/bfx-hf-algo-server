@@ -25,7 +25,7 @@ const run = async () => {
     agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
 
     aos: [IcebergOrder, TWAPOrder, AccumulateDistribute],
-    port: 8877,
+    port: 8877
   })
 
   server.on('auth:success', () => {
