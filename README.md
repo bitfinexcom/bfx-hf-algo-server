@@ -8,13 +8,17 @@ This is a thin wrapper around the `bfx-hf-algo` `AOHost` class, which connects i
 
 Algo orders are automatically persisted via an embedded MongoDB instance within the `db/` folder, and are resumed when the algo server starts up.
 
-To use, populate `.env` with your API key/secret combo:
+### Usage
+
+Populate `.env` with your API key/secret combo:
 ```
 API_KEY=...
 API_SECRET=...
 ```
 
-Then run `npm start`, and refresh your Bitfinex UI after all order form layouts have been uploaded. Once the server is listening, select an algorithmic order from the order form dropdown and fill in your desired arguments.
+Then run `npm start`
+
+Refresh your Bitfinex UI after all order form layouts have been uploaded. Once the server is listening, select an algorithmic order from the order form dropdown and fill in your desired arguments.
 
 To start an algo order click the 'Submit' button in the Bitfinex UI to generate a broadcast notification which will be picked up by your running algo server instance, starting the desired order.
 
