@@ -9,4 +9,5 @@ npm-debug.log
 coverage
 .env
 !db/.keep
+package-lock.json
 db/*
