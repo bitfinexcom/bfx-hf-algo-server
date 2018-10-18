@@ -4,7 +4,9 @@
 
 <img src="https://github.com/bitfinexcom/bfx-hf-algo-server/raw/master/res/ad_screenshot.png" width="300" align="left" />
 
-This is a thin wrapper around the `bfx-hf-algo` `AOHost` class, which connects it to the Bitfinex notification system in order to start algo orders from the order form in the bfx UI. The AOHost automatically uploads all relevant order form layouts on startup.
+This is a thin wrapper around the [`bfx-hf-algo`](https://github.com/bitfinexcom/bfx-hf-algo) `AOHost` class, which connects it to the Bitfinex notification system in order to start algo orders from the order form in the bfx UI. The AOHost automatically uploads all relevant order form layouts on startup.
+
+The algo orders themselves are implemented in [`bfx-hf-algo`](https://github.com/bitfinexcom/bfx-hf-algo-server).
 
 Algo orders are automatically persisted via an embedded MongoDB instance within the `db/` folder, and are resumed when the algo server starts up.
 
