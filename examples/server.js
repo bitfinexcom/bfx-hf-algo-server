@@ -7,8 +7,10 @@ require('bfx-hf-util/lib/catch_uncaught_errors')
 
 const debug = require('debug')('bfx:hf:algo-server:examples:server')
 const SocksProxyAgent = require('socks-proxy-agent')
-const { IcebergOrder, TWAPOrder, AccumulateDistribute } = require('bfx-hf-algo')
 const { connectDB, startDB } = require('bfx-hf-models')
+const {
+  PingPong, IcebergOrder, TWAPOrder, AccumulateDistribute
+} = require('bfx-hf-algo')
 
 const AOServer = require('../lib/server')
 const { API_KEY, API_SECRET, WS_URL, REST_URL, SOCKS_PROXY_URL } = process.env
@@ -23,9 +25,14 @@ const run = async () => {
     wsURL: WS_URL,
     restURL: REST_URL,
     agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
+    port: 8877,
 
-    aos: [IcebergOrder, TWAPOrder, AccumulateDistribute],
-    port: 8877
+    aos: [
+      PingPong,
+      IcebergOrder,
+      TWAPOrder,
+      AccumulateDistribute
+    ],
   })
 
   server.on('auth:success', () => {
