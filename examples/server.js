@@ -9,7 +9,7 @@ const debug = require('debug')('bfx:hf:algo-server:examples:server')
 const SocksProxyAgent = require('socks-proxy-agent')
 const { connectDB, startDB } = require('bfx-hf-models')
 const {
-  PingPong, IcebergOrder, TWAPOrder, AccumulateDistribute
+  PingPong, Iceberg, TWAP, AccumulateDistribute
 } = require('bfx-hf-algo')
 
 const AOServer = require('../lib/server')
@@ -29,8 +29,8 @@ const run = async () => {
 
     aos: [
       PingPong,
-      IcebergOrder,
-      TWAPOrder,
+      Iceberg,
+      TWAP,
       AccumulateDistribute
     ],
   })
