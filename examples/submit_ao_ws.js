@@ -10,7 +10,7 @@ const ws = new WebSocket('ws://localhost:8877')
 ws.on('open', () => {
   debug('socket opened')
 
-  ws.send(JSON.stringify(['submit.ao', 'bfx.accumulate_distribute', {
+  ws.send(JSON.stringify(['submit.ao', 'bfx-accumulate_distribute', {
     symbol: 'tBTCUSD',
     amount: -0.2,
     sliceAmount: -0.1,
