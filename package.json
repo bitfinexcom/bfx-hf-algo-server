@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-algo-server",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "HF Algorithmic Order Server",
   "main": "index.js",
   "engines": {
@@ -32,14 +32,15 @@
     "BTC"
   ],
   "dependencies": {
-    "bfx-hf-algo": "^1.0.0",
-    "bfx-hf-util": "^1.0.0",
+    "bfx-hf-algo": "^1.2.0",
     "bfx-hf-models": "^1.0.0",
+    "bfx-hf-util": "^1.0.0",
     "bitfinex-api-node": "^2.0.0",
     "bluebird": "^3.5.1",
+    "dotenv": "^6.0.0",
     "lodash": "^4.17.10",
-    "p-iteration": "^1.1.7",
-    "dotenv": "^6.0.0"
+    "lowdb": "^1.0.0",
+    "p-iteration": "^1.1.7"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
