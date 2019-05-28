@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-algo-server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "HF Algorithmic Order Server",
   "main": "index.js",
   "engines": {
@@ -16,7 +16,12 @@
     "test": "npm run lint && npm run unit",
     "unit": "NODE_ENV=test istanbul cover _mocha -- -R spec -b --recursive",
     "test-without-coverage": "NODE_ENV=test mocha -R spec -b --recursive",
-    "start": "node examples/server.js"
+    "start": "node examples/server.js",
+    "start-order": "node scripts/start-order.js",
+    "start-all-orders": "node scripts/start-all-orders.js",
+    "stop-order": "node scripts/stop-order.js",
+    "stop-all-orders": "node scripts/stop-all-orders.js",
+    "list-orders": "node scripts/list-orders.js"
   },
   "repository": {
     "type": "git",
@@ -33,7 +38,7 @@
   ],
   "dependencies": {
     "bfx-hf-algo": "^1.2.0",
-    "bfx-hf-models": "^1.0.0",
+    "bfx-hf-models": "^2.0.0",
     "bfx-hf-util": "^1.0.0",
     "bitfinex-api-node": "^2.0.0",
     "bluebird": "^3.5.1",
