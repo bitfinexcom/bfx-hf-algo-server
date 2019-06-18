@@ -21,7 +21,8 @@
     "start-all-orders": "node scripts/start-all-orders.js",
     "stop-order": "node scripts/stop-order.js",
     "stop-all-orders": "node scripts/stop-all-orders.js",
-    "list-orders": "node scripts/list-orders.js"
+    "list-orders": "node scripts/list-orders.js",
+    "clear-aos": "node scripts/clear_aos.js"
   },
   "repository": {
     "type": "git",
