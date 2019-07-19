@@ -13,7 +13,7 @@ const {
 
 const AOServer = require('../lib/server')
 const { API_KEY, API_SECRET, WS_URL, REST_URL, SOCKS_PROXY_URL } = process.env
-
+debug(WS_URL, REST_URL)
 const run = async () => {
   const server = new AOServer({
     apiKey: API_KEY,
