@@ -26,7 +26,7 @@ ws.on('open', () => {
     cancelDelay: 150,
     catchUp: true,
     awaitFill: true,
-    _margin: false,
+    _margin: false
   }]))
 })
 
@@ -39,6 +39,7 @@ ws.on('message', (msgJSON) => {
     msg = JSON.parse(msgJSON)
   } catch (e) {
     debug('error parsing received JSON: %s', e.message)
-    return
   }
+
+  debug('recv %j', msg)
 })

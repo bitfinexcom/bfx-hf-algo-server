@@ -28,6 +28,6 @@ module.exports = (idArgv) => {
 
   return {
     algoID: idParts[0],
-    gid: idParts[1],
+    gid: idParts[1]
   }
 }
