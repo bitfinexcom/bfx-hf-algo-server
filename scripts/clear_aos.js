@@ -11,12 +11,12 @@ const { API_KEY, API_SECRET, REST_URL } = process.env
 const rest = new RESTv2({
   apiKey: API_KEY,
   apiSecret: API_SECRET,
-  url: REST_URL,
+  url: REST_URL
 })
 
 rest.updateSettings({
-  ['api:bitfinex_algorithmic_orders']: {},
-  ['api:ethfinex_algorithmic_orders']: {},
+  'api:bitfinex_algorithmic_orders': {},
+  'api:ethfinex_algorithmic_orders': {}
 }).then(() => {
   console.log('cleared all algorithmic order definitions')
 })
