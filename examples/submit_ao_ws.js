@@ -23,6 +23,7 @@ ws.on('open', () => {
     capType: 'bid',
     capDelta: 10,
     submitDelay: 150,
+    lev: Math.random() * 10,
     cancelDelay: 150,
     catchUp: true,
     awaitFill: true,
