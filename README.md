@@ -12,10 +12,11 @@ Algo orders are automatically persisted via an embedded MongoDB instance within 
 
 ### Usage
 
-Populate `.env` with your API key/secret combo:
+By default, the `lowdb` DB backend is used. To run the standard server, populate `.env` with your API credentials and DB path:
 ```
 API_KEY=...
 API_SECRET=...
+DB_FILENAME=...
 ```
 
 Then run `npm start`
@@ -30,50 +31,72 @@ The server can be stopped/started at will, with running algo orders automaticall
 ---
 
 ### Example Invocation
-
 ```js
-'use strict'
+const {
+  IcebergOrder, TWAPOrder, AccumulateDistribute, MACrossover
+} = require('bfx-hf-algo')
 
-process.env.DEBUG = '*' // 'bfx:hf:*'
+const WebSocket = require('ws')
+const AOServer = require('bfx-hf-algo-server')
+const HFDB = require('bfx-hf-models')
+const HFDBLowDBAdapter = require('bfx-hf-models-adapter-lowdb')
+const {
+  AOAdapter: BFXAOAdapter, schema: HFDBBitfinexSchema
+} = require('bfx-hf-ext-plugin-bitfinex')
 
-require('dotenv').config()
-require('bfx-hf-util/lib/catch_uncaught_errors')
+const DB_PATH = './some_path/db.json'
 
-const debug = require('debug')('bfx:hf:algo-server:examples:server')
-const SocksProxyAgent = require('socks-proxy-agent')
-const { IcebergOrder, TWAPOrder, AccumulateDistribute } = require('bfx-hf-algo')
-const { connectDB, startDB } = require('bfx-hf-models')
-
-const AOServer = require('../lib/server')
-const { API_KEY, API_SECRET, WS_URL, REST_URL, SOCKS_PROXY_URL } = process.env
-
-const run = async () => {
-  await startDB(`${__dirname}/../db`)
-  await connectDB('hf-as')
-
-  const server = new AOServer({
-    apiKey: API_KEY,
-    apiSecret: API_SECRET,
-    wsURL: WS_URL,
-    restURL: REST_URL,
-    agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
-
-    aos: [IcebergOrder, TWAPOrder, AccumulateDistribute],
-    port: 8877,
+// create database instance for persisting algo orders
+const db = new HFDB({
+  schema: HFDBBitfinexSchema,
+  adapter: HFDBLowDBAdapter({
+    dbPath: DB_PATH,
+    schema: HFDBBitfinexSchema
   })
+})
 
-  server.on('auth:success', () => {
-    debug('authenticated')
-  })
+// create exchange adapter for order execution
+const adapter = new BFXAOAdapter({
+  apiKey: '...',
+  apiSecret: '...'
+})
 
-  server.on('auth:error', (error) => {
-    debug('auth error: %j', error)
-  })
-}
+// spawn algo server instance
+const server = new AOServer({
+  db,
+  adapter,
+  port: 8877,
+  aos: [
+    PingPong,
+    Iceberg,
+    TWAP,
+    AccumulateDistribute,
+    MACrossover
+  ]
+})
 
-try {
-  run()
-} catch (err) {
-  debug('error: %s', err)
-}
+server.on('auth:success', () => { /* ... */ })
+server.on('auth:error', (error) => { /* ... */ })
+
+// ao server now ready to accept orders on port 8877
+// example order submit
+
+const ws = new WebSocket('ws://localhost:8877')
+
+ws.on('open', () => {
+  ws.send(JSON.stringify(['submit.ao', 'bfx-accumulate_distribute', {
+    symbol: 'tEOSUSD',
+    amount: 10,
+    sliceAmount: 1,
+    sliceInterval: 5 * 1000,
+    intervalDistortion: 0.20,
+    amountDistortion: 0.20,
+    orderType: 'MARKET',
+    submitDelay: 150,
+    cancelDelay: 150,
+    catchUp: true,
+    awaitFill: true,
+    _margin: true
+  }]))
+})
 ```
