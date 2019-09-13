@@ -1,0 +1,59 @@
+# 1.3.1
+- refactor: moved heartbeat responsibility into AO adapter
+- manifest: bump deps
+- meta: add github issue/pr templates
+- meta: standardize travis config
+- meta: add placeholder npm test
+- meta: updated readme
+
+# 1.3.0
+- refactor: use new AO adapter system (now requires exchange adapter plugin)
+- refactor: use AO gid for creation timestamp
+- feature: add stop AO command to server
+- fix: standard --fix
+
+# 1.2.1
+- fix: deregister listeners in clearAlgoHost()
+- manifest: bump deps
+
+# 1.2.0
+- refactor: finalize bfx-hf-models migration
+- feature: add clear AOs script
+- feature: add ability to change AO Host to server
+- manifest: bump deps
+
+# 1.1.2
+- refactor: pass local DB instance to AOHost (revert)
+
+# 1.1.1
+- was WIP bump prior to 1.2.0
+
+# 1.1.0
+- manifest: bump bfx-hf-algo
+- feature: set full AO set on startup
+- refactor: update AO IDs due to bfx-hf-algo bump
+- refactor: use bfx-hf-algo DB instance
+
+# 1.0.4
+- fix: update bfx-hf-algo import naming
+
+# 1.0.3
+- feature: add scripts to list, start an stop orders
+- feature: add API commands for listing & submitting AOs
+- feature: add close method to server
+- fix: export server in index.js
+- meta: add LICENSE
+
+# 1.0.2
+- fix: delay manager init to allow AO UI defs to register
+- fix: catch ws send() errors due to closed connection
+
+# 1.0.1
+- feature: include Ping/Pong in default server AO set
+- meta: update readme
+- meta: rm package-lock.json
+- fix: standard --fix
+
+# 1.0.0
+- Initial version
+
