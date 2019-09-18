@@ -1,10 +1,12 @@
-# 1.3.1
+# 1.4.0
+- refactor: manual open() call now required to start ws server
 - refactor: moved heartbeat responsibility into AO adapter
 - manifest: bump deps
 - meta: add github issue/pr templates
 - meta: standardize travis config
 - meta: add placeholder npm test
 - meta: updated readme
+- meta: removed scripts, cannot predict DB backend
 
 # 1.3.0
 - refactor: use new AO adapter system (now requires exchange adapter plugin)
