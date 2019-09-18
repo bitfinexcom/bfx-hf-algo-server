@@ -60,3 +60,5 @@ server.on('auth:success', () => {
 server.on('auth:error', (error) => {
   debug('auth error: %j', error)
 })
+
+server.open()
