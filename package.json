@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
+    "bfx-api-node-rest": "^1.1.4",
     "bfx-hf-ext-plugin-bitfinex": "^1.0.0",
     "bfx-hf-models-adapter-lowdb": "^1.0.0",
     "chai": "^4.2.0",
