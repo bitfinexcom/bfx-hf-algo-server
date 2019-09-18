@@ -49,7 +49,7 @@ const adapter = new BFXAOAdapter({
   restURL: REST_URL,
   agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
   withHeartbeat: true,
-  dms: 4,
+  dms: 4
 })
 
 // init algo order server
