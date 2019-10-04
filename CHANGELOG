@@ -1,3 +1,6 @@
+# 1.4.1
+- docs: create/update
+
 # 1.4.0
 - refactor: manual open() call now required to start ws server
 - refactor: moved heartbeat responsibility into AO adapter
