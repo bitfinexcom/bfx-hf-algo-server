@@ -55,9 +55,9 @@ The server can be stopped/started at will, with running algo orders automaticall
 
 ### Docs
 
-Refer to `docs/server.md` for JSDoc-generated API documentation. For documentation on the available WebSocket API commands, see `docs/ws_api.md`.
+[Refer to `docs/server.md`](/docs/server.md) for JSDoc-generated API documentation. For documentation on the available WebSocket API commands, [see `docs/ws_api.md`](/docs/ws_api.md).
 
-See the `examples/` folder for executable examples.
+[See the `examples/`](/examples) folder for executable examples.
 
 ### Example
 
