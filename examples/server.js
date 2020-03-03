@@ -48,8 +48,8 @@ const adapter = new BFXAOAdapter({
   wsURL: WS_URL,
   restURL: REST_URL,
   agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
-  withHeartbeat: true,
-  dms: 4
+  withHeartbeat: true
+  // dms: 4
 })
 
 // init algo order server
