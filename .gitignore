@@ -11,3 +11,4 @@ coverage
 !db/.keep
 package-lock.json
 db/*
+tags
