@@ -9,7 +9,7 @@ const debug = require('debug')('bfx:hf:algo-server:examples:server')
 const SocksProxyAgent = require('socks-proxy-agent')
 const _isFunction = require('lodash/isFunction')
 const {
-  PingPong, Iceberg, TWAP, AccumulateDistribute, MACrossover
+  PingPong, Iceberg, TWAP, AccumulateDistribute, MACrossover, OCOCO
 } = require('bfx-hf-algo')
 
 const { version: VERSION } = require('../package.json')
@@ -29,7 +29,7 @@ const {
 
 const AO_SETTINGS_KEY = `api:${PLATFORM}_algorithmic_orders`
 const algoOrders = [
-  PingPong, Iceberg, TWAP, AccumulateDistribute, MACrossover
+  PingPong, Iceberg, TWAP, AccumulateDistribute, MACrossover, OCOCO
 ]
 
 // init db
@@ -48,8 +48,8 @@ const adapter = new BFXAOAdapter({
   wsURL: WS_URL,
   restURL: REST_URL,
   agent: SOCKS_PROXY_URL ? new SocksProxyAgent(SOCKS_PROXY_URL) : null,
-  withHeartbeat: true,
-  dms: 4
+  withHeartbeat: true
+  // dms: 4
 })
 
 // init algo order server

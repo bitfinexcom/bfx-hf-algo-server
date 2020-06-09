@@ -11,3 +11,5 @@ coverage
 !db/.keep
 package-lock.json
 db/*
+tags
+.nyc_output
