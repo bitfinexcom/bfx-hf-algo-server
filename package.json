@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-algo-server",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "HF Algorithmic Order Server",
   "main": "index.js",
   "engines": {

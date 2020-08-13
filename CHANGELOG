@@ -1,3 +1,6 @@
+# 1.4.3
+- fix: when initiating a new server instance, correctly use the passed in host
+
 # 1.4.2
 - meta: bump bitfinex-api-node to v4
 
